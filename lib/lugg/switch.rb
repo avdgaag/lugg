@@ -35,6 +35,8 @@ module Lugg
       @options.send(@method, *[@flags, @cast, @desc].flatten.compact, &@action)
     end
 
+    attr_reader :options, :obj
+
     private
 
     def flags(*flags)
@@ -52,7 +54,5 @@ module Lugg
     def action(&block)
       @action = block
     end
-
-    attr_reader :options, :obj
   end
 end
