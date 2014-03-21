@@ -14,10 +14,20 @@ SymbolArray:
 Documentation:
   Exclude:
     - spec/**/*.rb
+    - lib/lugg/version.rb
 
 LineLength:
   Exclude:
     - spec/**/*.rb
+    - lib/lugg.rb
 
 AndOr:
   Enabled: false
+
+ClassLength:
+  Exclude:
+    - lib/lugg/runner.rb
+
+MethodLength:
+  Exclude:
+    - lib/lugg/runner.rb

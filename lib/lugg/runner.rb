@@ -5,6 +5,14 @@ require 'optparse'
 require 'optparse/time'
 
 module Lugg
+  # The runner defines the command line interface for Lugg, using the other
+  # components and defining command line options and their implementations.
+  #
+  # When creating a Runner object, you pass it your option flags (typically
+  # `ARGV`). You can then apply its conditions to an IO object (typically
+  # `ARGF`).
+  #
+  # @todo extract conditions into individual objects.
   class Runner
     attr_reader :filter
     private :filter
@@ -45,10 +53,16 @@ module Lugg
 
     def options
       @options ||= OptionParser.new do |o|
-        o.banner = "Usage: lugg [options] FILE\n\nParses log entries from FILE or STDIN and uses [options] to\ncontrol what is sent STDOUT."
+        o.banner = <<-EOS
+Usage: lugg [options] FILE
+
+Parses log entries from FILE or STDIN and uses [options] to control what is
+sent STDOUT.
+EOS
         o.separator ''
 
-        o.on '--and', 'Combine previous and next clause with AND instead of OR' do
+        o.on '--and',
+             'Combine previous and next clause with AND instead of OR' do
           @combine = true
         end
 

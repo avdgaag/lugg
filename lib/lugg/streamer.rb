@@ -2,6 +2,8 @@ require 'lugg/request'
 require 'lugg/request_matcher'
 
 module Lugg
+  # The Streamer reads in content from an IO object and returns an Enumerator
+  # yielding {Request} objects.
   class Streamer
     attr_reader :io
     private :io
@@ -10,7 +12,8 @@ module Lugg
       @io = io
     end
 
-    def records
+    # @return [Enumerator]
+    def records # rubocop:disable MethodLength
       Enumerator.new do |yielder|
         buffer = ''
         matcher = RequestMatcher.new
