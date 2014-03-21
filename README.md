@@ -1,4 +1,4 @@
-# Lugg -- Query Rails log files from the command line [![Build Status](https://secure.travis-ci.org/avdgaag/lugg.png?branch=master)](http://travis-ci.org/avdgaag/lugg)
+# Lugg &mdash; query Rails log files [![Build Status](https://secure.travis-ci.org/avdgaag/lugg.png?branch=master)](http://travis-ci.org/avdgaag/lugg)
 
 A tiny command line utility to search through Rails server log files and display
 requests that meet certain criteria.
@@ -65,7 +65,7 @@ See the inline [API docs](http://rubydoc.info/github/avdgaag/lugg/master/frames)
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/lugg/fork )
+1. Fork it ( https://github.com/avdgaag/lugg/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -84,6 +84,6 @@ See the [HISTORY](https://github.com/avdgaag/lugg/blob/master/HISTORY.md) file f
 
 Created by: Arjan van der Gaag  
 URL: [http://arjanvandergaag.nl](http://arjanvandergaag.nl)  
-Project homepage: [http://avdgaag.github.com/lugg](http://avdgaag.github.com/lugg)  
+Project homepage: [http://avdgaag.github.io/lugg](http://avdgaag.github.io/lugg)  
 Date: march 2014  
 License: [MIT-license](https://github.com/avdgaag/lugg/LICENSE) (same as Ruby)
