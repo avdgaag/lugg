@@ -24,13 +24,9 @@ LineLength:
 AndOr:
   Enabled: false
 
-ClassLength:
-  Exclude:
-    - lib/lugg/runner.rb
-
-MethodLength:
-  Exclude:
-    - lib/lugg/runner.rb
-
 DoubleNegation:
   Enabled: false
+
+TrivialAccessors:
+  Exclude:
+    - lib/lugg/switch.rb

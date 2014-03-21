@@ -32,7 +32,7 @@ module Lugg
       let(:options) { %w(--post --and --controller PostsController) }
       let(:input)   { "Started GET\nProcessing by PostsController#index as HTML\nCompleted 1\nStarted POST\nProcessing by BlogController#create as HTML\nCompleted 2\n" }
 
-      it 'limits requests to GET requests' do
+      it 'limits to post requests in PostsController' do
         subject.run(StringIO.new(input))
         expect(stdout.string).to eql("Started POST\nProcessing by BlogController#create as HTML\nCompleted 2\n")
       end
@@ -42,7 +42,7 @@ module Lugg
       let(:options) { %w(--controller PostsController) }
       let(:input)   { "Started GET\nProcessing by PostsController#index as HTML\nCompleted 1\nStarted POST\nProcessing by BlogController#create as HTML\nCompleted 2\n" }
 
-      it 'limits requests to GET requests' do
+      it 'limits to just PostController' do
         subject.run(StringIO.new(input))
         expect(stdout.string).to eql("Started GET\nProcessing by PostsController#index as HTML\nCompleted 1\n")
       end
@@ -52,17 +52,17 @@ module Lugg
       let(:options) { %w(--since 2012-03-20) }
       let(:input)   { "Started GET at 2012-03-21 12:00 +0100\nCompleted 1\nStarted GET at 2012-03-19\nProcessing by BlogController#create as HTML\nCompleted 2\n" }
 
-      it 'limits requests to GET requests' do
+      it 'limits to after the date' do
         subject.run(StringIO.new(input))
         expect(stdout.string).to eql("Started GET at 2012-03-21 12:00 +0100\nCompleted 1\n")
       end
     end
 
-    context 'with --param foo=bar' do
-      let(:options) { ['--param', 'foo=val'] }
+    context 'with --param foo=val' do
+      let(:options) { %w(--param foo=val) }
       let(:input)   { "Started GET\n  Parameters: {\"foo\"=>\"val\"}\nCompleted 1\nStarted POST\nProcessing by BlogController#create as HTML\nCompleted 2\n" }
 
-      it 'limits requests to GET requests' do
+      it 'limits to requests with given param' do
         subject.run(StringIO.new(input))
         expect(stdout.string).to eql("Started GET\n  Parameters: {\"foo\"=>\"val\"}\nCompleted 1\n")
       end
