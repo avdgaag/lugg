@@ -1,4 +1,4 @@
-# Lugg &mdash; query Rails log files [![Build Status](https://secure.travis-ci.org/avdgaag/lugg.png?branch=master)](http://travis-ci.org/avdgaag/lugg)
+# Lugg &mdash; query Rails log files [![Build Status](https://secure.travis-ci.org/avdgaag/lugg.png?branch=master)](http://travis-ci.org/avdgaag/lugg) [![Code Climate](https://codeclimate.com/github/avdgaag/lugg.png)](https://codeclimate.com/github/avdgaag/lugg)
 
 A tiny command line utility to search through Rails server log files and display
 requests that meet certain criteria.
