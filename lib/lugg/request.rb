@@ -74,8 +74,11 @@ module Lugg
 
     def params
       params_string = source[/^  Parameters: (.+)$/, 1]
-      return {} unless params_string
-      eval(params_string) rescue {} # rubocop:disable Eval, RescueModifier
+      String(params_string)
+        .scan(/(?<!\\)"(.+?)(?<!\\)"=>(?<!\\)"(.+?)(?<!\\)"/)
+        .each_with_object({}) do |match, output|
+        output[match[0]] = match[1]
+      end
     end
   end
 end
