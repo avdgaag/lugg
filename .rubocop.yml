@@ -31,3 +31,6 @@ ClassLength:
 MethodLength:
   Exclude:
     - lib/lugg/runner.rb
+
+DoubleNegation:
+  Enabled: false

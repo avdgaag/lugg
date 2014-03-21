@@ -66,7 +66,7 @@ EOS
           @combine = true
         end
 
-        %w[get post put delete head patch].each do |verb|
+        %w(get post put delete head patch).each do |verb|
           o.on "--#{verb}", "Limit to #{verb.upcase} requests" do
             add_clause { |r| r.method == verb.upcase }
           end
@@ -84,7 +84,7 @@ EOS
           add_clause { |r| r.action == ca }
         end
 
-        %w[json html xml csv pdf js].each do |format|
+        %w(json html xml csv pdf js).each do |format|
           o.on "--#{format}", "Limit to #{format} requests" do
             add_clause { |r| r.format.downcase == format }
           end
