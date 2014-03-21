@@ -1,0 +1,4 @@
+--color
+--order rand
+-I lib
+--require lugg

@@ -1,0 +1,9 @@
+--no-private
+--title "Lugg, Query Rails log files from the command line."
+--readme README.md
+--markup markdown
+--markup-provider kramdown
+--output-dir doc/api
+-
+HISTORY.md
+LICENSE

@@ -1,0 +1,23 @@
+AllCops:
+  Includes:
+    - '**/*.gemspec'
+    - '**/Rakefile'
+  Excludes:
+    - 'bin/*'
+
+SignalException:
+  EnforcedStyle: only_raise
+
+SymbolArray:
+  Enabled: true
+
+Documentation:
+  Exclude:
+    - spec/**/*.rb
+
+LineLength:
+  Exclude:
+    - spec/**/*.rb
+
+AndOr:
+  Enabled: false
